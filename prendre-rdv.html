@@ -1,0 +1,27 @@
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Prendre un rendez-vous</title>
+    <link rel="stylesheet" href="styles.css">
+</head>
+<body>
+
+    <div class="page-prendre-rdv">
+        <h1>Choisissez un créneau pour votre rendez-vous</h1>
+        
+        <!-- Liste des créneaux disponibles avec un formulaire de réservation -->
+        <form action="confirmation-rdv.html" method="POST">
+            <label for="date">Date du rendez-vous :</label>
+            <input type="date" id="date" name="date" required>
+
+            <label for="heure">Heure :</label>
+            <input type="time" id="heure" name="heure" required>
+
+            <button type="submit">Réserver</button>
+        </form>
+    </div>
+
+</body>
+</html>

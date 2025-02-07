@@ -1,0 +1,238 @@
+/* Réinitialisation des styles de base */
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+/* Corps de page et base */
+body {
+    font-family: Arial, sans-serif;
+    background-color: white;
+    display: flex;
+    justify-content: center; 
+    align-items: center;
+    height: 100vh; 
+    margin: 0; 
+}
+
+/* Style de la page d'accueil */
+.page-accueil {
+    background-color: #a8d8ef;
+    color: black;
+    padding: 60px 90px; 
+    border-radius: 8px;
+    text-align: center;
+    width: 100%; 
+    max-width: 900px; 
+    min-height: 400px; 
+    box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+    margin: 0 auto;
+    display: flex;
+    flex-direction: column;
+    justify-content: center; 
+	text-align: center;
+	display: inline-block;
+}
+
+
+.page-accueil h1 {
+    font-size: 36px;
+    margin: 20px auto;
+	text-align: center;
+	width: 90%; 
+}
+
+.page-accueil p {
+    font-size: 20px;
+}
+
+.page-accueil a {
+    background-color: #3a9cbf;
+    color: black;
+    padding: 12px 20px;
+    text-decoration: none;
+    border-radius: 5px;
+    margin: 40px auto;
+    font-size: 18px;
+    width: max-content;
+}
+
+.page-accueil a:hover {
+    background-color: #7db9d4;
+}
+
+/* Styles généraux pour les boutons */
+.boutons {
+    padding: 12px 20px;
+    font-size: 16px;
+    border: none;
+    color: white;
+    border-radius: 5px;
+    cursor: pointer;
+    text-align: center;
+    display: inline-block;
+    width: fit-content; 
+    max-width: 200px;
+    text-decoration: none;
+}
+
+
+.bouton-deconnexion {
+    margin-top: 20px; 
+    padding: 10px 20px;
+    font-size: 16px;
+    border: none;
+    background-color: #4c8cbb; 
+    color: white;
+    border-radius: 5px;
+    cursor: pointer;
+    text-align: center;
+    display: inline-block;
+    margin: 10px 0; 
+    width: auto;
+}
+
+/* Survol des boutons */
+.bouton:hover {
+    background-color: #0056b3; 
+}
+
+
+/* Formulaire de connexion */
+.page-connexion {
+    width: 100%;
+    max-width: 400px;
+    margin: auto;
+    background-color: #ffffff;
+    padding: 20px;
+    border-radius: 8px;
+    box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+}
+
+.page-connexion h1 {
+    text-align: center;
+    margin-bottom: 20px;
+}
+
+.page-connexion label {
+    display: block;
+    margin-bottom: 5px;
+}
+
+.page-connexion input {
+    width: 100%;
+    padding: 10px;
+    margin: 10px 0;
+    border: 1px solid #ccc;
+    border-radius: 5px;
+    font-size: 16px;
+}
+
+.page-connexion button {
+    width: 100%;
+    padding: 12px;
+    background-color: #4c8cbb; 
+    color: white;
+    border: none;
+    border-radius: 5px;
+    font-size: 18px;
+}
+
+.page-connexion button:hover {
+    background-color: #2f6d8b; 
+}
+
+/* Page tableau de bord */
+.tableau-de-bord {
+    text-align: center;
+    padding: 50px;
+    background-color: #f9f9f9;
+    border-radius: 8px;
+}
+
+.tableau-de-bord h1 {
+    font-size: 32px;
+    margin-bottom: 30px;
+}
+
+/* --- Media Queries --- */
+
+/* Responsive pour les tablettes et grands téléphones (max-width 768px) */
+@media screen and (max-width: 768px) {
+    body {
+        margin: 15px;
+    }
+
+    .page-accueil h1 {
+        font-size: 30px;
+    }
+
+    .page-accueil {
+        padding: 30px;
+    }
+
+    .bouton {
+        font-size: 16px;
+        padding: 8px 16px;
+    }
+
+    .page-connexion {
+        width: 90%;
+        padding: 15px;
+    }
+
+    .page-connexion h1 {
+        font-size: 24px;
+    }
+
+    .page-connexion input, .page-connexion button {
+        padding: 8px;
+        font-size: 14px;
+    }
+
+    .tableau-de-bord {
+        padding: 30px;
+    }
+
+    .tableau-de-bord h1 {
+        font-size: 28px;
+    }
+}
+
+/* Responsive pour les smartphones (max-width 480px) */
+@media screen and (max-width: 480px) {
+    body {
+        margin: 10px;
+    }
+
+    .page-accueil h1 {
+        font-size: 24px;
+    }
+
+    .page-accueil {
+        padding: 20px;
+    }
+
+    .page-connexion {
+        width: 100%;
+        padding: 10px;
+    }
+
+    .page-connexion h1 {
+        font-size: 22px;
+    }
+
+    .page-connexion input, .page-connexion button {
+        padding: 8px;
+        font-size: 14px;
+    }
+
+    .tableau-de-bord {
+        padding: 20px;
+    }
+
+    .tableau-de-bord h1 {
+        font-size: 24px;
+    }
+}
