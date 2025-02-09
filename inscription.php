@@ -29,7 +29,7 @@ if ($_SERVER["REQUEST_METHOD"] == "POST") {
     $mot_de_passe_hache = password_hash($mot_de_passe, PASSWORD_DEFAULT);
 
     // Vérifier si l'email existe déjà dans la base de données
-    $requete = $pdo->prepare("SELECT COUNT(*) FROM utilisateurs WHERE email = :email");
+    $requete = $pdo->prepare("SELECT COUNT(*) FROM utilisateurs WHERE util_email = :email");
     $requete->execute(['email' => $email]);
     if ($requete->fetchColumn() > 0) {
         echo "Un compte avec cet email existe déjà.";
@@ -37,7 +37,7 @@ if ($_SERVER["REQUEST_METHOD"] == "POST") {
     }
 
     // Insérer les données dans la table utilisateurs
-    $requete = $pdo->prepare("INSERT INTO utilisateurs (email, password) VALUES (:email, :password)");
+    $requete = $pdo->prepare("INSERT INTO utilisateurs (util_email, util_mot_de_passe) VALUES (:email, :password)");
     $requete->execute([
         'email' => $email,
         'password' => $mot_de_passe_hache
