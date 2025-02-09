@@ -47,7 +47,9 @@ body {
     border-radius: 5px;
     margin: 40px auto;
     font-size: 20px;
-    width: max-content;
+    width: 100%;
+    max-width: 250px;
+    display: inline-block;
 }
 
 .page-accueil a:hover {
