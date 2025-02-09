@@ -63,3 +63,63 @@ body {
     height: auto; 
 }
 
+/* Style de la page d'inscription */
+.formulaire {
+    text-align: center;
+    background: white;
+    padding: 60px 90px;
+    border-radius: 10px;
+    box-shadow: 0 4px 10px rgba(0, 0, 0, 0.1);
+    width: 100%;
+    max-width: 900px; 
+    min-height: 400px;
+}
+.formulaire h2 {
+    font-size: 30px;
+    margin: 20px auto;
+	text-align: center;
+}
+
+.formulaire a {
+    background-color: #4facfe;
+    color: black;
+    padding: 12px 20px;
+    text-decoration: none;
+    border-radius: 5px;
+    margin: 40px auto;
+    font-size: 20px;
+    width: 100%;
+    max-width: 400px;
+    display: inline-block;
+}
+
+.formulaire a:hover {
+    background-color: #00f2fe;
+}
+
+/* Style des champs de saisie */
+input[type="email"],
+input[type="password"] {
+    width: 100%;
+    padding: 12px;
+    margin: 10px 0;
+    border: 1px solid #ccc;
+    border-radius: 5px;
+    font-size: 16px;
+}
+
+/* Style du bouton d'inscription */
+button {
+    width: 100%;
+    padding: 12px;
+    background-color: #4facfe;
+    color: black;
+    border: none;
+    border-radius: 5px;
+    font-size: 18px;
+    cursor: pointer;
+}
+
+button:hover {
+    background-color: #00f2fe;
+}
