@@ -2,7 +2,6 @@
 // Inclure le fichier de configuration
 include('config.php');
 
-
 try {
     // Tentative de connexion à la base de données en utilisant les informations du fichier config.php
     $connexion = "mysql:host={$config['host']};dbname={$config['db']};charset={$config['charset']}";
@@ -21,7 +20,6 @@ if ($_SERVER["REQUEST_METHOD"] == "POST") {
     $email = $_POST['email'];
     $mot_de_passe = $_POST['mot_de_passe'];
     $telephone = $_POST['telephone'];
-}
 
     // Vérifier que tous les champs sont remplis
     if (empty($nom) || empty($prenom) || empty($email) || empty($telephone) || empty($mot_de_passe)) {
@@ -50,15 +48,23 @@ if ($_SERVER["REQUEST_METHOD"] == "POST") {
     $requete = $pdo->prepare("INSERT INTO utilisateurs (util_nom, util_prenom, util_email, util_mot_de_passe, util_telephone) VALUES (:nom, :prenom, :email, :mot_de_passe, :telephone)");
     $requete->execute([
         'nom' => $nom,
-            'prenom' => $prenom,
-            'email' => $email,
-            'mot_de_passe' => $mot_de_passe_hache,
-            'telephone' => $telephone
+        'prenom' => $prenom,
+        'email' => $email,
+        'mot_de_passe' => $mot_de_passe_hache,
+        'telephone' => $telephone
     ]);
 
+    // Récupérer l'ID de l'utilisateur inséré
+    $ID_utilisateur = $pdo->lastInsertId();
+
+    // Insérer dans la table 'patient'
+    $requetePatient = $pdo->prepare("INSERT INTO patients (util_id_utilisateur) VALUES (:util_id_utilisateur)");
+    $requetePatient->execute(['util_id_utilisateur' => $ID_utilisateur]);
+
     echo "Compte créé avec succès ! Vous pouvez maintenant vous connecter.";
+
     // Redirection vers la page de connexion
     header("Location: connexion.html");
     exit;
-
+}
 ?>
