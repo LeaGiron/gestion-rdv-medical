@@ -11,7 +11,7 @@ if ($_SERVER["REQUEST_METHOD"] == "POST") {
     }
 
     try {
-        $stmt = $pdo->prepare("SELECT util_id_utilisateur, util_mot_de_passe FROM utilisateurs WHERE util_email = :email");
+        $stmt = $pdo->prepare("SELECT util_id_utilisateur, util_mot_de_passe, util_role FROM utilisateurs WHERE util_email = :email");
         $stmt->execute(['email' => $email]);
         $user = $stmt->fetch(PDO::FETCH_ASSOC);
 
