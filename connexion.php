@@ -17,7 +17,7 @@ if ($_SERVER["REQUEST_METHOD"] == "POST") {
 
         if ($user && password_verify($password, $user['util_mot_de_passe'])) {
             $_SESSION['user_id'] = $user['util_id_utilisateur'];
-            header("Location: tableau-de-bord.php");
+            header("Location: tableau-de-bord.html");
             exit;
         } else {
             echo "Email ou mot de passe incorrect.";
