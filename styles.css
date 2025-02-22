@@ -114,7 +114,7 @@ input[type="password"] {
     font-size: 16px;
 }
 
-/* Style du bouton d'inscription */
+/* Style des boutons */
 button {
     width: 100%;
     padding: 12px;
@@ -127,5 +127,69 @@ button {
 }
 
 button:hover {
+    background-color: #00f2fe;
+}
+
+/* Style de la page de connexion */
+.page-connexion {
+    text-align: center;
+    background: white;
+    padding: 60px 90px;
+    border-radius: 10px;
+    box-shadow: 0 4px 10px rgba(0, 0, 0, 0.1);
+    width: 100%;
+    max-width: 900px; 
+    min-height: 400px;
+}
+
+.page-connexion h1 {
+    font-size: 40px;
+    margin: 20px auto;
+	text-align: center;
+}
+
+/* Style des champs de saisie */
+input[type="email"],
+input[type="password"] {
+    width: 100%;
+    padding: 12px;
+    margin: 10px 0;
+    border: 1px solid #ccc;
+    border-radius: 5px;
+    font-size: 16px;
+}
+
+/* Style du tableau de bord */
+.tableau-de-bord {
+    text-align: center;
+    background: white;
+    padding: 60px 90px;
+    border-radius: 10px;
+    box-shadow: 0 4px 10px rgba(0, 0, 0, 0.1);
+    width: 100%;
+    max-width: 900px; 
+    min-height: 400px;
+}
+
+.tableau-de-bord h1 {
+    font-size: 40px;
+    margin: 20px auto;
+	text-align: center;
+}
+
+.tableau-de-bord a {
+    background-color: #4facfe;
+    color: black;
+    padding: 12px 20px;
+    text-decoration: none;
+    border-radius: 5px;
+    margin: 40px auto;
+    font-size: 20px;
+    width: 100%;
+    max-width: 400px;
+    display: inline-block;
+}
+
+.tableau-de-bord a:hover {
     background-color: #00f2fe;
 }
