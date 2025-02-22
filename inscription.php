@@ -1,6 +1,6 @@
 <?php
 // Inclure le fichier de configuration
-include('config.php');
+$config = require('config.php');
 
 try {
     // Tentative de connexion à la base de données en utilisant les informations du fichier config.php
