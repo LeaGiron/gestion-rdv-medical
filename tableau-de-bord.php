@@ -1,8 +1,9 @@
 <?php
 session_start();
+include('connexion-bdd.php'); 
 
 // Vérifie que l'utilisateur est bien connecté
-if (!isset($_SESSION['user_id'])) {
+if (!isset($_SESSION['util_id_utilisateur'])) {
     header("Location: connexion.html");
     exit;
 }
@@ -27,16 +28,16 @@ $role = $_SESSION['role'];
         <!-- Vérification du rôle -->
             <!-- Si l'utilisateur est un patient -->
             <?php if ($role == 'patient'): ?>
-            <a href="prendre-rdv.html" class="bouton">Prendre un rendez-vous</a>
-            <a href="voir-rdv.html" class="bouton">Voir mes rendez-vous</a>
+            <a href="prendre-rdv.php" class="bouton">Prendre un rendez-vous</a>
+            <a href="voir-rdv.php" class="bouton">Voir mes rendez-vous</a>
             <?php endif; ?>
 
             <!-- Si l'utilisateur est un médecin, afficher "Voir tous les rendez-vous" -->
             <?php if ($role == 'medecin'): ?>
-                <a href="voir-tous-rdv.html" class="bouton">Voir tous les rendez-vous</a>
+                <a href="voir-tous-rdv.php" class="bouton">Voir tous les rendez-vous</a>
             <?php endif; ?>
 
-        <a href="deconnexion.html" class="bouton-deconnexion">Se déconnecter</a>
+        <a href="deconnexion.php" class="bouton-deconnexion">Se déconnecter</a>
     </div>
 
 </body>

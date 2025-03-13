@@ -67,11 +67,11 @@ body {
 .formulaire {
     text-align: center;
     background: white;
-    padding: 10px 60px;
+    padding: 5px 50px;
     border-radius: 10px;
     box-shadow: 0 4px 10px rgba(0, 0, 0, 0.1);
     width: 100%;
-    max-width: 800px; 
+    max-width: 1000px; 
 }
 
 .formulaire h2 {
@@ -83,13 +83,12 @@ body {
 .formulaire a {
     background-color: #4facfe;
     color: black;
-    padding: 12px 20px;
+    padding: 10px 20px;
     text-decoration: none;
     border-radius: 5px;
-    margin: 40px auto;
+    margin: 10px auto;
     font-size: 20px;
     width: 100%;
-    max-width: 400px;
     display: inline-block;
 }
 
@@ -114,7 +113,6 @@ input[type="password"] {
     font-size: 16px;
 }
 
-/* Style des boutons */
 button {
     width: 100%;
     padding: 12px;
@@ -192,4 +190,267 @@ input[type="password"] {
 
 .tableau-de-bord a:hover {
     background-color: #00f2fe;
+}
+
+/* Page pour voir tous les rdv d'un médecin */
+.voir-tous-rdv-medecin {
+    width: 90%;
+    max-width: 1200px;
+    margin: 50px auto;
+    padding: 20px;
+}
+
+/* Titre principal en haut */
+.voir-tous-rdv-medecin h1 {
+    text-align: center;
+    font-size: 2rem;
+    margin-top: 20px;
+    color: #333;
+}
+
+/* Chaque section (boîte) est affichée en bloc, centrée, et avec fond blanc */
+.voir-tous-rdv-medecin section {
+    padding: 20px;
+    background-color: #fff;
+    margin: 20px auto;  /* Espacement vertical et centrage horizontal */
+    border-radius: 8px;
+    box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1);
+    max-width: 800px;
+}
+
+/* Titres des sections */
+.voir-tous-rdv-medecin h2 {
+    color: #333;
+    font-size: 1.8rem;
+    margin-bottom: 15px;
+    text-align: center;
+}
+
+/* Listes de rendez-vous */
+.voir-tous-rdv-medecin ul {
+    list-style-type: none;
+    padding: 0;
+}
+
+.voir-tous-rdv-medecin li {
+    background-color: #fff;
+    margin: 10px 0;
+    padding: 15px;
+    border: 1px solid #ddd;
+    border-radius: 5px;
+}
+
+/* Style des boutons */
+.voir-tous-rdv-medecin button {
+    background-color: #3498db;
+    color: #fff;
+    border: none;
+    padding: 10px 15px;
+    border-radius: 5px;
+    cursor: pointer;
+    transition: background-color 0.3s ease;
+}
+
+.voir-tous-rdv-medecin .bouton-annuler {
+    background-color: #e74c3c;
+}
+
+.voir-tous-rdv-medecin .bouton-confirmer {
+    background-color: #2ecc71;
+}
+
+/* Page pour prendre un rendez-vous */
+.prendre-rdv {
+    text-align: center;
+    background: white;
+    padding: 60px 90px;
+    border-radius: 10px;
+    box-shadow: 0 4px 10px rgba(0, 0, 0, 0.1);
+    width: 100%;
+    max-width: 900px; 
+    min-height: 400px;
+}
+
+.prendre-rdv h2 {
+    font-size: 30px;
+    margin: 20px auto;
+    text-align: center;
+    margin-bottom: 40px;
+}
+
+.prendre-rdv input[type="date"],
+.prendre-rdv input[type="time"],
+.prendre-rdv select {
+    padding: 15px;
+    border: 1px solid #ddd;
+    border-radius: 4px;
+    font-size: 1rem;
+    width: 100%;
+    margin-bottom: 15px;
+}
+
+.prendre-rdv label {
+    font-size: 1.1rem;
+    margin-bottom: 5px;
+    display: block;
+}
+
+.prendre-rdv button {
+    background-color: #4facfe;
+    color: white;
+    padding: 15px 32px;
+    border: none;
+    border-radius: 5px;
+    cursor: pointer;
+    font-size: 1.2rem;
+    width: 100%;
+}
+
+.prendre-rdv button:hover {
+    background-color: #00f2fe;
+}
+
+/* Page pour voir tous les rendez-vous d'un patient */
+.voir-rdv {
+    text-align: center;
+    background: white;
+    padding: 60px 90px;
+    border-radius: 10px;
+    box-shadow: 0 4px 10px rgba(0, 0, 0, 0.1);
+    width: 100%;
+    max-width: 900px; 
+    min-height: 400px;
+}
+
+.voir-rdv h2 {
+    font-size: 30px;
+    margin: 20px auto;
+    text-align: center;
+    margin-bottom: 40px;
+}
+
+table {
+    width: 100%;
+    border-collapse: collapse;
+    background: #fff;
+    border-radius: 10px;
+    overflow: hidden;
+    box-shadow: 0 2px 10px rgba(0, 0, 0, 0.1);
+    margin-top: 20px;
+  }
+  
+  th, td {
+    padding: 12px;
+    text-align: left;
+    border-bottom: 1px solid #ddd;
+  }
+  
+  th {
+    background: #4facfe;
+    color: white;
+    text-align: center;
+  }
+  
+  tr:nth-child(even) {
+    background: #f9f9f9;
+  }
+
+.voir-rdv button {
+    background-color: #4facfe;
+    color: black;
+    padding: 15px 30px;
+    border: none;
+    border-radius: 5px;
+    cursor: pointer;
+    font-size: 1.2rem;
+    width: 100%;
+    margin-top: 30px;
+}
+
+.voir-rdv button:hover {
+    background-color: #00f2fe;
+}
+
+/* Page pour voir tous les rendez-vous d'un médecin */
+.voir-tous-rdv {
+    text-align: center;
+    background: white;
+    padding: 60px 90px;
+    border-radius: 10px;
+    box-shadow: 0 4px 10px rgba(0, 0, 0, 0.1);
+    width: 100%;
+    max-width: 900px; 
+    min-height: 400px;
+}
+
+.voir-tous-rdv h1 {
+    font-size: 40px;
+    margin: 20px auto;
+	text-align: center;
+}
+
+.voir-tous-rdv h2 {
+    font-size: 25px;
+    margin: 20px auto;
+    text-align: center;
+    margin-bottom: 40px;
+}
+
+.voir-tous-rdv button {
+    width: 70%;
+    padding: 10px;
+    background-color: #4facfe;
+    color: black;
+    border: none;
+    border-radius: 5px;
+    font-size: 15px;
+    cursor: pointer;
+}
+
+.voir-tous-rdv button:hover {
+    background-color: #00f2fe;
+}
+
+section {
+    margin-bottom: 30px;
+}
+
+ul.rdv-liste, 
+ul.tous-les-rdv-liste, 
+ul.rdv-annules-liste {
+    list-style-type: none;
+    padding-left: 0;
+    margin: 0;
+}
+
+li {
+    background-color: #f9f9f9;
+    padding: 20px;
+    margin-bottom: 15px;
+    border-radius: 8px;
+    box-shadow: 0 2px 5px rgba(0, 0, 0, 0.05);
+    display: flex;
+    flex-direction: column;
+    gap: 10px;
+}
+
+li p {
+    margin: 5px 0;
+}
+
+button:disabled {
+    background-color: #ccc;
+    cursor: not-allowed;
+}
+
+.voir-tous-rdv div form {
+    display: flex;
+    justify-content: center;
+    gap: 10px;
+}
+
+section .rdv-liste, 
+section .tous-les-rdv-liste, 
+section .rdv-annules-liste {
+    margin-bottom: 20px;
 }
