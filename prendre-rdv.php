@@ -8,7 +8,9 @@ if (!isset($_SESSION["util_id_utilisateur"])) {
 }
 
 // Récupérer la liste des médecins
-$sql = "SELECT util_id_utilisateur, util_nom, util_prenom FROM utilisateurs WHERE util_role = 'medecin'";
+$sql = "SELECT medecins.med_id_medecin, utilisateurs.util_nom, utilisateurs.util_prenom 
+        FROM medecins 
+        JOIN utilisateurs ON medecins.util_id_utilisateur = utilisateurs.util_id_utilisateur";
 try {
     $stmt = $pdo->query($sql);
     $medecins = $stmt->fetchAll(PDO::FETCH_ASSOC);
@@ -81,9 +83,10 @@ if ($_SERVER['REQUEST_METHOD'] == 'POST'
       <select id="med_id_medecin" name="med_id_medecin" required>
           <option value="">Sélectionnez un médecin</option>
           <?php foreach ($medecins as $row): ?>
-              <option value="<?= htmlspecialchars($row['util_id_utilisateur']); ?>" <?= (isset($_POST['med_id_medecin']) && $_POST['med_id_medecin'] == $row['util_id_utilisateur']) ? 'selected' : ''; ?>>
-                  <?= htmlspecialchars($row['util_nom'] . ' ' . $row['util_prenom']); ?>
-              </option>
+        <option value="<?= htmlspecialchars($row['med_id_medecin']); ?>" <?= (isset($_POST['med_id_medecin']) && $_POST['med_id_medecin'] == $row['med_id_medecin']) ? 'selected' : ''; ?>>
+            <?= htmlspecialchars($row['util_nom'] . ' ' . $row['util_prenom']); ?>
+        </option>
+
           <?php endforeach; ?>
       </select>
 
