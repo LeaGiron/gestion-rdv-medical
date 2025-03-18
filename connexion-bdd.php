@@ -2,7 +2,6 @@
 // Récupérer les informations de connexion dans un autre fichier sécurisé
 $config = require 'config.php';
 
-// DSN (Data Source Name)
 $connexion = "mysql:host={$config['host']};dbname={$config['db']};charset={$config['charset']}";
 
 try {

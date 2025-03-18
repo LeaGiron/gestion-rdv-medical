@@ -7,7 +7,6 @@ session_unset();
 
 // Détruit la session
 session_destroy();
-setcookie('remember_me', '', time() - 3600, "/"); // Supprime le cookie
 header("Location: index.html");
 exit();
 ?>

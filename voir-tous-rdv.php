@@ -5,7 +5,6 @@ include('connexion-bdd.php');
 $medecin_id = $_SESSION['med_id_medecin'];  // Récupérer l'ID du médecin connecté
 
 // Requête pour récupérer les rendez-vous "en attente"
-// Ici, on récupère les infos du patient et du médecin à partir de la table utilisateurs
 $rdv_en_attente = "
     SELECT r.rdv_id_rendez_vous, 
            p_u.util_nom AS patient_nom, p_u.util_prenom AS patient_prenom, 
@@ -72,7 +71,6 @@ $rdv_annules = $stmt_annules->fetchAll(PDO::FETCH_ASSOC);
 <body>
 
   <div class="voir-tous-rdv">
-    <h1>Mes Rendez-vous</h1>
 <!-- Section des rendez-vous à accepter -->
 <section class="rdv-a-accepter">
   <h2>Rendez-vous en attente de confirmation</h2>
@@ -108,14 +106,12 @@ $rdv_annules = $stmt_annules->fetchAll(PDO::FETCH_ASSOC);
           <p><strong>Date du rendez-vous :</strong> <?= htmlspecialchars($rdv['rdv_date_rendez_vous']) ?></p>
           <p><strong>Heure du rendez-vous :</strong> <?= htmlspecialchars($rdv['rdv_heure_rendez_vous']) ?></p>
 
-          <div style="display: flex; justify-content: flex-start; gap: 10px;">
             <!-- Formulaire pour annuler le rendez-vous -->
             <form action="annuler-rdv.php" method="POST">
             <input type="hidden" name="rdv_id" value="<?= htmlspecialchars($rdv['rdv_id_rendez_vous']) ?>">
             <button type="submit">Annuler ce rendez-vous</button>
           </form>
 
-          </div>
         </li>
       <?php endforeach; ?>
     <?php else: ?>

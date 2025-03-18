@@ -5,14 +5,25 @@ include('connexion-bdd.php');
 // PHP doit utiliser le fuseau horaire Europe/Paris
 date_default_timezone_set('Europe/Paris');
 
-// Récupérer l'ID du patient depuis la session (vérifiez que l'utilisateur est connecté)
-$rdv_id_patient = isset($_SESSION['util_id_utilisateur']) ? $_SESSION['util_id_utilisateur'] : null;
+// Récupérer l'ID de l'utilisateur depuis la session (vérifiez que l'utilisateur est connecté)
+$util_id_utilisateur = isset($_SESSION['util_id_utilisateur']) ? $_SESSION['util_id_utilisateur'] : null;
 
-if (!$rdv_id_patient) {
+if (!$util_id_utilisateur) {
     die("Erreur : Vous devez être connecté pour prendre un rendez-vous.");
 }
 
 try {
+    // Récupérer l'ID du patient en fonction de l'utilisateur connecté
+    $stmt = $pdo->prepare("SELECT pat_id_patient FROM patients WHERE util_id_utilisateur = :util_id_utilisateur");
+    $stmt->execute(['util_id_utilisateur' => $util_id_utilisateur]);
+    $patient = $stmt->fetch(PDO::FETCH_ASSOC);
+
+    if (!$patient) {
+        die("Erreur : Aucun patient trouvé pour cet utilisateur.");
+    }
+
+    $rdv_id_patient = $patient['pat_id_patient']; // ID du patient pour l'enregistrement du rendez-vous
+
     // Récupérer la liste des médecins
     $stmt = $pdo->prepare("
         SELECT m.med_id_medecin, u.util_nom, u.util_prenom 
@@ -70,7 +81,7 @@ if ($_SERVER["REQUEST_METHOD"] === "POST"
     } else {
         // Vérifier si l'heure est toujours disponible avant d'enregistrer
         $stmt = $pdo->prepare("SELECT COUNT(*) AS total FROM rendez_vous WHERE rdv_id_medecin = :medecin_id AND rdv_date_rendez_vous = :rdv_date_rendez_vous AND rdv_heure_rendez_vous = :heure");
-        $stmt->execute([
+        $stmt->execute([ 
             'medecin_id' => $medecin_id, 
             'rdv_date_rendez_vous' => $rdv_date_rendez_vous, 
             'heure' => $heure_formatee
