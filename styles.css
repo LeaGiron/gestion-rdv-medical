@@ -173,8 +173,6 @@ button:hover {
     background-color: #00f2fe;
 }
 
-
-/* Style des champs de saisie */
 input[type="email"],
 input[type="password"] {
     width: 100%;

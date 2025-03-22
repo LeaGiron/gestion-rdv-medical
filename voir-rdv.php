@@ -1,13 +1,13 @@
 <?php
 session_start();
-require "connexion-bdd.php"; 
+require "connexion-bdd.php";
 
 // Vérifier si l'utilisateur est connecté
 if (!isset($_SESSION["util_id_utilisateur"])) {
     die("Erreur : Vous devez être connecté pour voir vos rendez-vous.");
 }
 
-$id_utilisateur = $_SESSION["util_id_utilisateur"]; 
+$id_utilisateur = $_SESSION["util_id_utilisateur"];
 
 // Récupérer l'ID du patient à partir de l'utilisateur connecté
 $sql_patient = "SELECT pat_id_patient FROM patients WHERE util_id_utilisateur = :id_utilisateur";
@@ -27,12 +27,11 @@ try {
 }
 
 // Récupérer tous les rendez-vous du patient
-$sql = "SELECT rdv.rdv_id_rendez_vous, rdv.rdv_date_rendez_vous, rdv.rdv_heure_rendez_vous, rdv.rdv_statut_rendez_vous, 
+$sql = "SELECT rdv.rdv_id_rendez_vous, rdv.rdv_date_rendez_vous, rdv.rdv_heure_rendez_vous, rdv.rdv_statut_rendez_vous,
                med.util_nom AS nom_medecin, med.util_prenom AS prenom_medecin
         FROM rendez_vous rdv
         JOIN utilisateurs med ON rdv.rdv_id_medecin = med.util_id_utilisateur
-        WHERE rdv.rdv_id_patient = :id_patient 
-        AND med.util_role = 'medecin'
+        WHERE rdv.rdv_id_patient = :id_patient
         ORDER BY rdv.rdv_date_rendez_vous ASC, rdv.rdv_heure_rendez_vous ASC";
 
 try {
