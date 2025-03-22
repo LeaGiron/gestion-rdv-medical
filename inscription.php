@@ -26,6 +26,11 @@ if ($_SERVER["REQUEST_METHOD"] == "POST") {
         $errors['telephone'] = "Le numéro de téléphone doit contenir exactement 10 chiffres.";
     }
 
+    // Vérification du format de l'email
+    if (!filter_var($email, FILTER_VALIDATE_EMAIL) || !strpos($email, '.') || !strpos($email, '@')) {
+        $errors['email'] = "L'email doit être valide et contenir un '@' ainsi qu'un '.'.";
+    }
+
     // Vérifier si l'email existe déjà dans la base de données utilisateurs
     $requeteUtilisateur = $pdo->prepare("SELECT COUNT(*) FROM utilisateurs WHERE util_email = :email");
     $requeteUtilisateur->execute(['email' => $email]);
