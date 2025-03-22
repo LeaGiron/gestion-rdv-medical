@@ -28,9 +28,10 @@ try {
 
 // Récupérer tous les rendez-vous du patient
 $sql = "SELECT rdv.rdv_id_rendez_vous, rdv.rdv_date_rendez_vous, rdv.rdv_heure_rendez_vous, rdv.rdv_statut_rendez_vous,
-               med.util_nom AS nom_medecin, med.util_prenom AS prenom_medecin
+               u.util_nom AS nom_medecin, u.util_prenom AS prenom_medecin
         FROM rendez_vous rdv
-        JOIN utilisateurs med ON rdv.rdv_id_medecin = med.util_id_utilisateur
+        JOIN medecins m ON rdv.rdv_id_medecin = m.med_id_medecin
+        JOIN utilisateurs u ON m.util_id_utilisateur = u.util_id_utilisateur
         WHERE rdv.rdv_id_patient = :id_patient
         ORDER BY rdv.rdv_date_rendez_vous ASC, rdv.rdv_heure_rendez_vous ASC";
 
