@@ -3,7 +3,7 @@
 -- https://www.phpmyadmin.net/
 --
 -- Hôte : 127.0.0.1
--- Généré le : sam. 22 mars 2025 à 15:01
+-- Généré le : sam. 22 mars 2025 à 15:50
 -- Version du serveur : 10.4.32-MariaDB
 -- Version de PHP : 8.2.12
 
@@ -155,10 +155,7 @@ INSERT INTO `patients` (`pat_id_patient`, `util_id_utilisateur`) VALUES
 (1, 1),
 (2, 3),
 (3, 5),
-(4, 7),
-(23, 22),
-(28, 27),
-(29, 28);
+(4, 7);
 
 -- --------------------------------------------------------
 
@@ -186,14 +183,9 @@ INSERT INTO `rendez_vous` (`rdv_id_rendez_vous`, `rdv_id_patient`, `rdv_id_medec
 (10, 3, 1, '2025-03-16', '14:00:00', 'En attente'),
 (11, 4, 2, '2025-03-17', '09:00:00', 'En attente'),
 (32, 1, 1, '2025-03-19', '10:00:00', 'Confirmé'),
-(33, 1, 1, '2025-03-20', '12:00:00', 'Annulé'),
-(54, 1, 2, '2025-03-21', '10:00:00', 'En attente'),
-(60, 23, 4, '2025-03-25', '14:00:00', 'En attente'),
-(61, 1, 3, '2025-03-27', '15:00:00', 'En attente'),
-(62, 1, 1, '2025-03-27', '16:00:00', 'Confirmé'),
-(63, 1, 3, '2025-03-20', '16:00:00', 'En attente'),
-(64, 23, 2, '2025-03-27', '15:30:00', 'En attente'),
-(65, 1, 3, '2025-03-25', '16:30:00', 'En attente');
+(66, 2, 4, '2025-03-27', '15:00:00', 'En attente'),
+(67, 2, 3, '2025-03-25', '08:00:00', 'En attente'),
+(68, 4, 3, '2025-03-28', '14:00:00', 'Confirmé');
 
 -- --------------------------------------------------------
 
@@ -223,10 +215,7 @@ INSERT INTO `utilisateurs` (`util_id_utilisateur`, `util_nom`, `util_prenom`, `u
 (5, 'Garnier', 'Camille', 'camille.garnier@email.com', '$2y$10$uTpFEV.8VI2yLHoZax7vseG/sA92SnJ5vV/iPNkgRQ0M2.mfAePcy', '0644556677', 'patient'),
 (6, 'Morel', 'Nicolas', 'nicolas.morel@email.com', '$2y$10$eF5cRJvf.4SYB9t6iMO.8ezw/0EP2lnhAQwKflieq06/xJ2Ulqqpu', '0655667788', 'medecin'),
 (7, 'Lefevre', 'Chloé', 'chloe.lefevre@email.com', '$2y$10$EbnNmEfrCheXuLkMHKLgburyBnSVbVElVf6YjXGwMpyzQQRgcljgy', '0666778899', 'patient'),
-(8, 'Durand', 'Pierre', 'pierre.durand@email.com', '$2y$10$s.Kd8aFZ3Z/YecoKDRQIV.cC50NEEDsVbqQIVraJEwSyD.XZUfZTq', '0677889900', 'medecin'),
-(22, 'Test', 'Leane', 'leane.test@gmail.com', '$2y$10$2zOq2YYso6bvtJxik6oAR.S2npjszlLlaMp0cdQos3IwZ.DkU9p3m', '0654723859', 'patient'),
-(27, 'Test', 'Adrien', 'adrien@test', '$2y$10$FdqTWCYXYHnLhMbgYpXDxulfPeiYkdK0xiKcGmgxhxYwCQCULKKRC', '0123456789', 'patient'),
-(28, 'Teste', 'Lea', 'lea@teste.fr', '$2y$10$zS88HZQw7Tb3TEAMNM0aXOhl4vBqhU0FgXP5i0XMrpP.K28eFvxQe', '0723425789', 'patient');
+(8, 'Durand', 'Pierre', 'pierre.durand@email.com', '$2y$10$s.Kd8aFZ3Z/YecoKDRQIV.cC50NEEDsVbqQIVraJEwSyD.XZUfZTq', '0677889900', 'medecin');
 
 --
 -- Déclencheurs `utilisateurs`
@@ -316,7 +305,7 @@ ALTER TABLE `patients`
 -- AUTO_INCREMENT pour la table `rendez_vous`
 --
 ALTER TABLE `rendez_vous`
-  MODIFY `rdv_id_rendez_vous` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=66;
+  MODIFY `rdv_id_rendez_vous` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=69;
 
 --
 -- AUTO_INCREMENT pour la table `utilisateurs`
