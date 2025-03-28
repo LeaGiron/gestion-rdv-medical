@@ -33,8 +33,6 @@ Ce projet de gestion de rendez-vous médicaux a été développé dans le cadre 
 - **Base de données** : MySQL (géré via PHPMyAdmin)
 - **Versioning** : Git 
 
-  ---
-
 ### 💗 Licence
 
 Tous droits réservés. Ce projet, y compris tous ses fichiers, est protégé par le droit d'auteur. Toute reproduction, distribution, modification, ou utilisation des fichiers, en tout ou en partie, sans autorisation préalable, est strictement interdite. En cas de besoin, contactez-moi directement pour obtenir les droits nécessaires.
